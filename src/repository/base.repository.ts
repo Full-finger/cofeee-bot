@@ -33,7 +33,7 @@ export abstract class KoishiBaseRepository<T extends { id: number }> implements 
 
   async findMany(filter: Partial<T>): Promise<T[]> {
     // @ts-ignore
-    return this.db.select(this.table, filter);
+    return this.db.get(this.table, filter);
   }
 
   async update(id: number, data: Partial<T>): Promise<T> {

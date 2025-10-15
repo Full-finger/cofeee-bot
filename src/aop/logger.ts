@@ -16,4 +16,6 @@ export function logExecution(target: any, propertyName: string, descriptor: Prop
     console.log(`[AOP] ${target.constructor.name}.${propertyName} 执行完毕`);
     return result;
   };
+
+  return descriptor;
 }

@@ -9,8 +9,8 @@ mkdir -p src/generated
 cat <<EOF > src/generated/todo.repository.ts
 // --- 此文件由 scripts/generate.sh 自动生成，请勿手动修改 ---
 
-import { KoishiBaseRepository } from '../src/repository/base.repository';
-import { Todo } from '../src/entity/todo.entity';
+import { KoishiBaseRepository } from '../repository/base.repository';
+import { Todo } from '../entity/todo.entity';
 
 export class TodoRepository extends KoishiBaseRepository<Todo> {
   constructor(db) {

@@ -2,7 +2,7 @@
 import { Context, Schema } from 'koishi';
 import { TodoController } from './controller/todo.controller';
 import { TodoService } from './service/todo.service';
-import { TodoRepository } from '../generated/todo.repository';
+import { TodoRepository } from './generated/todo.repository';
 
 // 插件配置
 export const Config = Schema.object({
@@ -11,8 +11,21 @@ export const Config = Schema.object({
 
 export const name = 'todo-plugin';
 
-// 声明插件依赖的服务
+// 声明依赖的服务
 export const inject = ['database'];
+
+// 声明数据库表结构类型
+declare module 'koishi' {
+  interface Tables {
+    todo: {
+      id: number;
+      content: string;
+      completed: boolean;
+      userId: string;
+      createdAt: Date;
+    }
+  }
+}
 
 export function apply(ctx: Context, config: any) {
   // 1. 依赖注入：初始化各层实例

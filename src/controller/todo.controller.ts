@@ -20,8 +20,7 @@ export class TodoController {
   @logExecution
   async list(session: Session) {
     const todos = await this.todoService.listTodos(session.userId);
-    // 确保todos是数组后再使用map方法
-    if (!Array.isArray(todos) || todos.length === 0) {
+    if (todos.length === 0) {
       return '📝 你还没有任何待办事项哦。';
     }
     const message = todos.map(todo => this.todoService.getHelper().format(todo)).join('\n');

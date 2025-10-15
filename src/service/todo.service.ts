@@ -15,9 +15,7 @@ export class TodoService extends BaseService {
 
   async listTodos(userId: string): Promise<Todo[]> {
     const todoRepo = this.getRepository() as TodoRepository;
-    const todos = await todoRepo.findByUserId(userId);
-    // 确保返回的是数组
-    return Array.isArray(todos) ? todos : [];
+    return todoRepo.findByUserId(userId);
   }
 
   async completeTodo(todoId: number, userId: string): Promise<Todo | null> {
