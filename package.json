@@ -1,0 +1,22 @@
+{
+  "name": "koishi-plugin-cofeee-bot",
+  "description": "一个用于LLM驱动的聊天机器人",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {},
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin"
+  ],
+  "devDependencies": {},
+  "peerDependencies": {
+    "koishi": "4.18.8"
+  }
+}
